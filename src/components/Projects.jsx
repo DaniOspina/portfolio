@@ -1,7 +1,47 @@
 import React from 'react';
 import { ProjectCard } from './ProjectCard.jsx';
-import { ProjectsContainer, SectionTitle, SectionProjects } from './Projects.styles.jsx';
+import styled from 'styled-components';
 
+export const SectionProjects = styled.div`
+background-color: #1f1f1f;
+padding-bottom: 5%;
+`;
+
+export const SectionTitle = styled.h2`
+  text-align: center;
+  font-size: 8rem;
+  color:rgb(55, 89, 190);
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 6%;
+    @media (max-width: 768px) {
+    font-size: 7rem;
+  }
+`;
+
+export const ProjectsContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  // Tres columnas por defecto
+  gap: 20px;
+  padding: 20px;
+  margin: 0 4rem;
+  
+  // Responsive para tablet y mobile
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);  // Dos columnas en tablet
+    margin: 0 2%;
+  } 
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;  // Una columna en mobile
+  }
+`;
+
+export const Title = styled.h1`
+  font-size: 10rem;
+  margin-bottom: 20px;
+
+`;
 // Datos de ejemplo para proyectos (asegurando que no esté vacío)
 const exampleProjects = [
   {
@@ -52,7 +92,7 @@ const exampleProjects = [
 
 const Projects = ({ projects = exampleProjects }) => {
   return (
-    <SectionProjects>
+    <SectionProjects id="projects">
       {/* Título de la sección usando styled-component */}
       <SectionTitle>
         Projects

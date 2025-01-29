@@ -1,6 +1,10 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
+  html {
+  scroll-behavior: smooth;
+ }
+  
   body {
     font-family: 'Lato', sans-serif;
     margin: 0;

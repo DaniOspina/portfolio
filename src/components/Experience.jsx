@@ -45,7 +45,7 @@ const DateStyled = styled.span`
 
 function Experience() {
   return (
-    <ExperienceContainer id="history">
+    <ExperienceContainer id="work">
       <ItemsContainer>
         <SectionTitle>WORK</SectionTitle>
         <VerticalTimeline>

@@ -1,148 +1,164 @@
-// src/components/Footer/Footer.jsx
-import React from 'react';
 import styled from 'styled-components';
-import { FaGithub, FaLinkedin, FaBehance } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaFileDownload } from 'react-icons/fa';
 
 const FooterContainer = styled.footer`
-  background-color: #0f172a; /* Fondo oscuro */
-  color:rgb(227, 231, 238);
-  padding: 50px;
+  background-color: #1f1f1f;
+  color: #fff;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  @media (min-width: 1024px) {
+    align-items: center;
+  }
+`;
+
+const HeaderAndNavContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
 `;
 
 const Header = styled.div`
-  margin-bottom: 2rem;
-  text-align: left;
+  text-align: center;
 
   h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    margin: 0;
   }
 
   h2 {
     font-size: 1.5rem;
-    color:rgba(207, 228, 238, 0.74); /* Azul claro */
-    margin-bottom: 1rem;
-    font-weight: 500;
+    margin: 0.5rem 0 0;
   }
-
-  p {
-    font-size: 1.2rem;
-    color: #94a3b8; /* Gris claro */
-  }
-`;
-
-const NavList = styled.ul`
-  display: none; /* Oculta la lista en mobile */
 
   @media (min-width: 1024px) {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 0px;
-  }
-`;
-
-const NavItem = styled.li`
-  margin: 1rem 0;
-  font-size: 1.2rem; /* Aumenta tamaño de fuente */
-
-  a {
-    text-decoration: none;
-    color: inherit;
-    transition: color 0.3s;
-
-    &:hover {
-      color:rgba(56, 191, 248, 0.64);
-      text-decoration: underline;
-      font-weight: 600;
+    text-align: center;
+    h1{
+    text-align: left;
     }
   }
 `;
 
+const NavList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
 
-const CVButton = styled.a`
-  display: block;
-  margin: 2rem 0;
-  padding: 1rem 2rem;
-  
-  text-align: center;
-  font-size: 1.5rem; /* Aumenta tamaño del botón */
-  font-weight: bold;
-  color: white;
-  background-color:rgb(85, 110, 121);
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background-color 0.3s;
+  a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    transition: color 0.3s ease;
 
-
-  &:hover {
-    background-color:rgb(126, 149, 161); /* Azul más oscuro */
+    &:hover {
+      color: #3b82f6;
+    }
   }
 
   @media (min-width: 1024px) {
-    width: 80%;
+    flex-direction: row; /* Change to row for laptop and above */
+    gap: 2rem; /* Add space between nav items */
+  }
+`;
+
+
+const NavItem = styled.li`
+  text-align: center;
+
+  @media (min-width: 1024px) {
+    text-align: center;
+  }
+`;
+
+const SocialAndFooterContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 `;
 
 const SocialIcons = styled.div`
   display: flex;
-  justify-content: flex-start; /* Alinea los íconos a la izquierda */
-  margin-top: 3rem;
+  gap: 1.5rem;
+  font-size: 1.5rem;
 
   a {
-    color: white;
-    font-size: 2rem; /* Aumenta tamaño de los iconos */
-    margin-right: 1.5rem;
-    transition: color 0.3s;
+    color: #fff;
+    transition: color 0.3s ease;
 
     &:hover {
-      color: #38bdf8;
+      color: #3b82f6;
     }
+  }
+`;
+
+const FooterText = styled.p`
+  font-size: 0.875rem;
+  text-align: center;
+  margin: 0;
+
+  @media (min-width: 1024px) {
+    text-align: right;
   }
 `;
 
 const Footer = () => {
   return (
     <FooterContainer id="footer">
-      <Header>
-        <h1>Daniela Ospina</h1>
-        <h2>Front End Developer & Designer</h2>
-        {/* <p>I build accessible digital experiences for the web.</p> */}
-      </Header>
-      <NavList>
-        <NavItem>
-          <a href="#about">ABOUT</a>
-        </NavItem>
-        <NavItem>
-          <a href="#experience">EXPERIENCE</a>
-        </NavItem>
-        <NavItem>
-          <a href="#projects">PROJECTS</a>
-        </NavItem>
-        <NavItem>
-          <a href="#projects">CONTACT</a>
-        </NavItem>
-      </NavList>
-      <CVButton href="/path-to-cv.pdf" target="_blank">
-        Download CV
-      </CVButton>
-      <SocialIcons>
-        <a href="https://github.com/DaniOspina" target="_blank" rel="noreferrer" aria-label="GitHub">
-          <FaGithub />
-        </a>
-        <a href="https://www.linkedin.com/in/daniela-ospina-sarmiento-developer/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-          <FaLinkedin />
-        </a>
-        <a href="https://behance.net" target="_blank" rel="noreferrer" aria-label="Behance">
-          <FaBehance />
-        </a>
-      </SocialIcons>
-      <p>© 2025 Daniela Ospina. All Rights Reserved.</p>
-      </FooterContainer>
-
+      <HeaderAndNavContainer>
+        <Header>
+          <h1>Daniela Ospina</h1>
+          <h2>Front End Developer & Designer</h2>
+        </Header>
+        <NavList>
+          <NavItem>
+            <a href="#about">ABOUT</a>
+          </NavItem>
+          <NavItem>
+            <a href="#experience">EXPERIENCE</a>
+          </NavItem>
+          <NavItem>
+            <a href="#projects">PROJECTS</a>
+          </NavItem>
+          <NavItem>
+            <a href="#contact">CONTACT</a>
+          </NavItem>
+        </NavList>
+      </HeaderAndNavContainer>
+      <SocialAndFooterContainer>
+        <SocialIcons>
+          <a href="https://github.com/DaniOspina" target="_blank" rel="noreferrer" aria-label="GitHub">
+            <FaGithub />
+          </a>
+          <a href="https://www.linkedin.com/in/daniela-ospina-sarmiento-developer/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <FaLinkedin />
+          </a>
+          <a href="/CV-Daniela-OspinaS.pdf" download aria-label="Download CV">
+            <FaFileDownload />
+          </a>
+        </SocialIcons>
+        <FooterText>© 2025 Daniela Ospina Sarmiento. All Rights Reserved.</FooterText>
+      </SocialAndFooterContainer>
+    </FooterContainer>
   );
 };
 

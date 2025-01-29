@@ -73,29 +73,38 @@ const Menu = styled.div`
 // Menu Item
 const MenuItem = styled.li`
   list-style: none;
-  font-size: 1.5rem;
+  font-size: 3rem;
   cursor: pointer;
 
   &:hover {
     color: #94a3b8;
   }
 `;
+
+const StyledLink = styled.a`
+  text-decoration: none;
+  color: inherit;
+  display: inline-block; /* Keeps it aligned like a block-level element */
+  width: 100%; /* Ensures it stretches inside flexbox containers if needed */
+`;
+
+
 
 // Close Button
-const CloseButton = styled.button`
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: none;
-  border: none;
-  color: #f1f5f9;
-  font-size: 2rem;
-  cursor: pointer;
+// const CloseButton = styled.button`
+//   position: absolute;
+//   top: 20px;
+//   right: 20px;
+//   background: none;
+//   border: none;
+//   color: #f1f5f9;
+//   font-size: 2rem;
+//   cursor: pointer;
 
-  &:hover {
-    color: #94a3b8;
-  }
-`;
+//   &:hover {
+//     color: #94a3b8;
+//   }
+// `;
 
 const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -118,12 +127,13 @@ const Navbar = () => {
 
       {/* Menu */}
       <Menu isOpen={isMenuOpen}>
-        <CloseButton onClick={closeMenu}>&times;</CloseButton>
+        {/* <CloseButton onClick={closeMenu}>&times;</CloseButton> */}
         <ul>
-          <MenuItem>About</MenuItem>
-          <MenuItem>Experience</MenuItem>
-          <MenuItem>Projects</MenuItem>
-          <MenuItem>Contact</MenuItem>
+          <MenuItem><StyledLink  href="#about" onClick={closeMenu}>ABOUT</StyledLink>
+          </MenuItem>
+          <MenuItem><StyledLink  href="#work" onClick={closeMenu}>EXPERIENCE</StyledLink></MenuItem>
+          <MenuItem><StyledLink  href="#projects" onClick={closeMenu}>PROJECTS</StyledLink></MenuItem>
+          <MenuItem><StyledLink  href="#contact" onClick={closeMenu}>CONTACT</StyledLink></MenuItem>
         </ul>
       </Menu>
     </>

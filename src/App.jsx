@@ -1,19 +1,16 @@
-// src/App.jsx
 import React from "react";
 import Navbar from "./components/Navbar";
-// import AboutSection from "./components/AboutSection";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
-import BentosSection from "./components/BentosSection";
+import Banner from "./components/Banner";
 
 const App = () => (
   <div>
     <Navbar />
     <div>
-      {/* <AboutSection />*/}
-      {/* <BentosSection /> */}
+      <Banner />
       <Experience />
       <Projects />
       <Contact />
