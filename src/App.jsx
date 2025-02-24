@@ -5,16 +5,20 @@ import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
 import Banner from "./components/Banner";
+import GlobalStyles from "./GlobalStyles";
 
 const App = () => (
   <div>
-    <Navbar />
+    <GlobalStyles/>
     <div>
-      <Banner />
-      <Experience />
-      <Projects />
-      <Contact />
-      <Footer />
+      <Navbar />
+      <div>
+        <Banner />
+        <Experience />
+        <Projects />
+        <Contact />
+        <Footer />
+      </div>
     </div>
   </div>
 );

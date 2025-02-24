@@ -80,7 +80,7 @@ const Banner = () => {
         <IconLink href="https://github.com/DaniOspina" target="_blank" rel="noopener noreferrer">
           <FaGithub />
         </IconLink>
-        <IconLink href="/CV-Daniela-OspinaS.pdf" download>
+        <IconLink href="https://drive.google.com/file/d/1XET4liFjaaq04TLkPUahbTM41uQQHF_B/view" target="_blank" rel="noopener noreferrer">
           <FaFileDownload />
         </IconLink>
       </IconsContainer>

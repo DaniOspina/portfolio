@@ -152,7 +152,7 @@ const Footer = () => {
           <a href="https://www.linkedin.com/in/daniela-ospina-sarmiento-developer/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
             <FaLinkedin />
           </a>
-          <a href="/CV-Daniela-OspinaS.pdf" download aria-label="Download CV">
+          <a href="https://drive.google.com/file/d/1XET4liFjaaq04TLkPUahbTM41uQQHF_B/view" target="_blank" rel="noreferrer">
             <FaFileDownload />
           </a>
         </SocialIcons>
